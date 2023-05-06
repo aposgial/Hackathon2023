@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from hackathon.mixins import ReversableList
 
 # Create your views here.
 
@@ -166,14 +165,10 @@ def shape_rotation(shape):
     if not shape:
         return None
     
-    rotated = []
     for array in shape:
-        if 1 in array:
-            reversible = ReversableList(array)
-            rotated.append(reversible.reverse())
-        else:
-            rotated.append(array)
-    return rotated
+        for index in array:
+            if index == 1:
+                return shape
     
 
 def shape(reqest):

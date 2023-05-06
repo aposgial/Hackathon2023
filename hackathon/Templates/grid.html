@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+
+{% block extend_head %}
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+          <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+           <style type="text/css">
+           .col-xs-2 {
+            border:3px solid rgb(0, 173, 20);
+            height: 50px;
+           }
+           </style>
+{% endblock %}
+
+{% block content %}
+           <br><br><br>
+
+<ul>
+    {% for i in '0123'|make_list  %}
+    <div class="container-fluid">
+        <div class= "row row-cols-auto">
+            {% for j in '0123456789'|make_list  %}
+            <div class="col-xs-2   ">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    {% endfor %}
+</ul>
+
+
+
+
+<center>
+    <br>
+    <div class="card bg-dark text-white">
+        <div class="card-img-overlay">
+            <form id="searchbar" method="get" action="">
+                <br><br><br><br><br><br><br><br>
+                <div class="mb-3 w-25">
+                    <input type="search" name="X" class="form-control me-2">
+                </div>
+                <div class="mb-3 w-25">
+                    <input type="search" name="Y" class="form-control me-2">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</center>
+
+
+{% endblock %}

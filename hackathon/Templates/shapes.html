@@ -14,39 +14,14 @@
             width: 50px;
             
            }
+           
            </style>
 {% endblock %}
 
 {% block content %}
            <br><br><br>
 
-<center>
-    <br>
-    {% if axis_flag %}
-        {% for i in X_axis   %}
-
-            <div class="container">
-                <div class= "row ">
-                    {% for j in Y_axis  %}
-                    <div class="square">
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        
-        {% endfor %}
-
-    {% else %}
-
-      {{message}}
-            
-    {% endif %}
-    <br>
-</center>
-
-
-
-
+           
 <center>
     <br>
     <div class="card bg-dark text-white">
@@ -54,12 +29,8 @@
             <form id="searchbar" method="get" action="">
                 <br><br><br><br><br><br><br><br>
                 <div class="mb-3 w-25">
-                    <label >X</label>
-                    <input type="search" name="X" class="form-control me-2">
-                </div>
-                <div class="mb-3 w-25">
-                    <label>Y</label>
-                    <input type="search" name="Y" class="form-control me-2">
+                    <label >Latter</label>
+                    <input type="search" name="option" class="form-control me-2">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -67,10 +38,22 @@
     </div>
 </center>
 
+{% for array in arr %}
+    <div class="container">
+        <div class= "row ">
+    {% for context in array %}
+    <div class="square">
+        <h3> {{context}} </h3>
+        {% if context == 1 %}
+           <!-- <img src="\image\square.jpg" alt="blue" width="50" height="50">  -->     
+        {% endif %}
+    </div>
 
-{% endblock %}
+
+    {% endfor %}
+</div>
+</div>
+{% endfor %}
 
 
-
-
-
+{% endblock%}

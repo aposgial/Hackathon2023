@@ -28,14 +28,11 @@ def shape_generator(shape_form:str):
         return None
     
     rows, cols = (5, 5)
-    arr = [[0]*cols]*rows
+    arr:list = [[0]*cols]*rows
 
     if shape_form == 'F':
-        arr[2][2] = 1
-        arr[2][3] = 1
-        arr[3][1] = 1
-        arr[3][2] = 1
-        arr[4][2] = 1
+        for i in range(4):
+            arr[0][0] = 1
         return arr
 
     if shape_form == 'I':
@@ -54,7 +51,10 @@ def shape(reqest):
     if reqest.method == 'GET':
         try:
             arr = shape_generator(str(reqest.GET.get('option')))
+            print(arr)
+            print(arr[2][2])
             axis_flag = True
+            message = 'ok'
         except (TypeError, ArithmeticError):
             X_axis = 0
             Y_axis = 0
@@ -68,4 +68,4 @@ def shape(reqest):
                         'message': message
                         }
         
-    return render(reqest,'grid.html', context=context)
+    return render(reqest,'shapes.html', context=context)

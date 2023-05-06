@@ -45,7 +45,9 @@
     <div class="square">
         <h3> {{context}} </h3>
         {% if context == 1 %}
-           <img src="\image\square.jpg" alt="blue" width="50" height="50">      
+            {% with 'photos/'|add:ar_info.photo as image_static %}
+                <img src="{% static image_static %}" height="50" width="50" >
+            {% endwith %}     
         {% endif %}
     </div>
 

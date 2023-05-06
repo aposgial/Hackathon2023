@@ -8,105 +8,31 @@
            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
            <style type="text/css">
            .col-xs-2 {
-            border:3px solid rgb(0, 0, 0);
+            border:3px solid rgb(0, 173, 20);
             height: 50px;
            }
            </style>
-<<<<<<< HEAD
-           
-           
-</head>
-    <body>
-        
-        <div class="container-fluid">
-            <div class= "row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
-=======
 {% endblock %}
 
 {% block content %}
            <br><br><br>
-           <div class="container-fluid">
-           <div class= "row">
-<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-</div>
-<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-</div>
-<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-</div>
-<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-</div>
-<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-</div>
-<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-</div>
->>>>>>> 9967bfea8faca62d74672ebaf26f031b563e87a1
 
-       </div>
-       <div class= "row">
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+<ul>
+    {% for i in '0123'|make_list  %}
+    <div class="container-fluid">
+        <div class= "row row-cols-auto">
+            {% for j in '0123456789'|make_list  %}
+            <div class="col-xs-2   ">
             </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    {% endfor %}
+</ul>
 
-        </div>
-        <div class= "row">
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
 
-        </div>
-        <div class= "row">
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            </div>
 
-<<<<<<< HEAD
-        </div>
-        </div>
-        
-    </body>
-</html>
-=======
-</div>
-</div>
 
 <center>
     <br>
@@ -120,7 +46,7 @@
                 <div class="mb-3 w-25">
                     <input type="search" name="Y" class="form-control me-2">
                 </div>
-                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>
@@ -128,4 +54,3 @@
 
 
 {% endblock %}
->>>>>>> 9967bfea8faca62d74672ebaf26f031b563e87a1

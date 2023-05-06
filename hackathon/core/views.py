@@ -36,72 +36,8 @@ def shape_generator(shape_form:str):
             [0,0,1,0,0],
             [0,0,0,0,0]
             ]
-<<<<<<< HEAD
-        return arr
-    
-    if shape_form == 'U':
-        arr:list = [
-            [0,0,0,0,0],
-            [0,0,0,0,0],
-            [0,1,0,1,0],
-            [0,1,1,1,0],
-            [0,0,0,0,0]
-            ]
-        return arr
-    
-    if shape_form == 'V':
-        arr:list = [
-            [0,0,0,0,0],
-            [0,0,0,1,0],
-            [0,0,0,1,0],
-            [0,1,1,1,0],
-            [0,0,0,0,0]
-            ]
-        return arr
-    
-    if shape_form == 'W':
-        arr:list = [
-            [0,0,0,0,0],
-            [0,1,0,0,0],
-            [0,1,1,0,0],
-            [0,0,1,1,0],
-            [0,0,0,0,0]
-            ]
-        return arr
-    
-    if shape_form == 'X':
-        arr:list = [
-            [0,0,0,0,0],
-            [0,0,1,0,0],
-            [0,1,1,1,0],
-            [0,0,1,0,0],
-            [0,0,0,0,0]
-            ]
-        return arr
-    
-    if shape_form == 'Y':
-        arr:list = [
-            [0,0,1,0,0],
-            [0,1,1,0,0],
-            [0,0,1,0,0],
-            [0,0,1,0,0],
-            [0,0,0,0,0]
-            ]
-        return arr
-    if shape_form == 'Z':
-        arr:list = [
-            [0,0,0,0,0],
-            [0,1,1,0,0],
-            [0,0,1,0,0],
-            [0,0,1,1,0],
-            [0,0,0,0,0]
-            ]
-        return arr
-
-=======
         return {"arr":arr,
-                "photo":""}
->>>>>>> de79816f6137158fbe7b080a8b7211a23ce4756d
+                "photo":"BLUE.png"}
 
     if shape_form == 'I':
         arr = [
@@ -113,7 +49,7 @@ def shape_generator(shape_form:str):
             ]
        
         return {"arr":arr,
-                "photo":""}
+                "photo":"RED.png"}
     
     if shape_form == 'L':
         arr = [
@@ -124,7 +60,7 @@ def shape_generator(shape_form:str):
             [0,0,1,1,0]
             ]
         return {"arr":arr,
-                "photo":""}
+                "photo":"YELLOW.png"}
     
     if shape_form == 'N':
         arr = [
@@ -135,7 +71,7 @@ def shape_generator(shape_form:str):
             [0,0,1,0,0]
             ]
         return {"arr":arr,
-                "photo":""}
+                "photo":"PING.png"}
     
     if shape_form == 'P':
         arr = [
@@ -146,7 +82,7 @@ def shape_generator(shape_form:str):
             [0,0,0,0,0]
             ]
         return {"arr":arr,
-                "photo":""}
+                "photo":"LIGHTBLUE.png"}
 
     if shape_form == 'T':
         arr = [
@@ -157,16 +93,15 @@ def shape_generator(shape_form:str):
             [0,0,0,0,0]
             ]
         return {"arr":arr,
-                "photo":""}
+                "photo":"LIGHTGRAY.png"}
 
     
 
 def shape(reqest):
     if reqest.method == 'GET':
         try:
-            arr = shape_generator(str(reqest.GET.get('option')))
-            print(arr)
-            print(arr[2][2])
+            arr_info = shape_generator(str(reqest.GET.get('option')))
+
             axis_flag = True
             message = 'ok'
         except (TypeError, ArithmeticError):
@@ -177,7 +112,7 @@ def shape(reqest):
         except Exception:
             message = 'wasted'
 
-        context:dict = {'arr_info': arr,
+        context:dict = {'arr_info': arr_info,
                         'axis_flag': axis_flag,
                         'message': message
                         }

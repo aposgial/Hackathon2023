@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from hackathon.mixins import ReversableList
+from hackathon.mixins import *
 
 # Create your views here.
 

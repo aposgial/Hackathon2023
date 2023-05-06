@@ -37,7 +37,11 @@ def shape_generator(shape_form:str):
             [0,0,0,0,0]
             ]
         return {"arr":arr,
+<<<<<<< HEAD
                 "photo":""}
+=======
+                "photo":"BLUE.png"}
+>>>>>>> ded1a44f2310b5d248dbfb93f1d04993b99ea880
 
     if shape_form == 'I':
         arr = [
@@ -49,7 +53,7 @@ def shape_generator(shape_form:str):
             ]
        
         return {"arr":arr,
-                "photo":""}
+                "photo":"RED.png"}
     
     if shape_form == 'L':
         arr = [
@@ -60,7 +64,7 @@ def shape_generator(shape_form:str):
             [0,0,1,1,0]
             ]
         return {"arr":arr,
-                "photo":""}
+                "photo":"YELLOW.png"}
     
     if shape_form == 'N':
         arr = [
@@ -71,7 +75,7 @@ def shape_generator(shape_form:str):
             [0,0,1,0,0]
             ]
         return {"arr":arr,
-                "photo":""}
+                "photo":"PING.png"}
     
     if shape_form == 'P':
         arr = [
@@ -82,7 +86,7 @@ def shape_generator(shape_form:str):
             [0,0,0,0,0]
             ]
         return {"arr":arr,
-                "photo":""}
+                "photo":"LIGHTBLUE.png"}
 
     if shape_form == 'T':
         arr = [
@@ -93,7 +97,73 @@ def shape_generator(shape_form:str):
             [0,0,0,0,0]
             ]
         return {"arr":arr,
-                "photo":""}
+                "photo":"LIGHTGRAY.png"}
+
+    if shape_form == 'U':
+        arr = [
+            [0,0,0,0,0],
+            [0,0,0,0,0],
+            [0,1,0,1,0],
+            [0,1,1,1,0],
+            [0,0,0,0,0]
+            ]
+        return {"arr":arr,
+                "photo":"GREEN.png"}
+    
+    if shape_form == 'V':
+        arr = [
+            [0,0,0,0,0],
+            [0,0,0,1,0],
+            [0,0,0,1,0],
+            [0,1,1,1,0],
+            [0,0,0,0,0]
+            ]
+        return {"arr":arr,
+                "photo":"ORANGE.png"}
+    
+    if shape_form == 'W':
+        arr = [
+            [0,0,0,0,0],
+            [0,1,0,0,0],
+            [0,1,1,0,0],
+            [0,0,1,1,0],
+            [0,0,0,0,0]
+            ]
+        return {"arr":arr,
+                "photo":"LIGHTGRAY.png"}
+    
+    if shape_form == 'X':
+        arr = [
+            [0,0,0,0,0],
+            [0,0,1,0,0],
+            [0,1,1,1,0],
+            [0,0,1,0,0],
+            [0,0,0,0,0]
+            ]
+        return {"arr":arr,
+                "photo":"BLUE.png"}
+    
+    if shape_form == 'Y':
+        arr = [
+            [0,0,1,0,0],
+            [0,1,1,0,0],
+            [0,0,1,0,0],
+            [0,0,1,0,0],
+            [0,0,0,0,0]
+            ]
+        return {"arr":arr,
+                "photo":"PING2.png"}
+    
+    if shape_form == 'Z':
+        arr = [
+            [0,0,0,0,0],
+            [0,1,1,0,0],
+            [0,0,1,0,0],
+            [0,0,1,1,0],
+            [0,0,0,0,0]
+            ]
+        return {"arr":arr,
+                "photo":"RED2.png"}
 
 def shape_rotation(shape):
     if not shape:
@@ -108,9 +178,8 @@ def shape_rotation(shape):
 def shape(reqest):
     if reqest.method == 'GET':
         try:
-            arr = shape_generator(str(reqest.GET.get('option')))
-            print(arr)
-            print(arr[2][2])
+            arr_info = shape_generator(str(reqest.GET.get('option')))
+
             axis_flag = True
             message = 'ok'
         except (TypeError, ArithmeticError):
@@ -121,7 +190,7 @@ def shape(reqest):
         except Exception:
             message = 'wasted'
 
-        context:dict = {'arr_info': arr,
+        context:dict = {'arr_info': arr_info,
                         'axis_flag': axis_flag,
                         'message': message
                         }

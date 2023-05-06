@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 {% block extend_head %}
@@ -14,14 +15,11 @@
             width: 50px;
             
            }
-           
+          
            </style>
 {% endblock %}
 
-{% block content %}
-           <br><br><br>
-
-           
+{% block content %}     
 <center>
     <br>
     <div class="card bg-dark text-white">
@@ -37,17 +35,18 @@
         </div>
     </div>
 </center>
-
-{% for array in arr %}
+<br>
+{% for array in arr_info.arr %}
     <div class="container">
         <div class= "row ">
     {% for context in array %}
     <div class="square">
-        <h3> {{context}} </h3>
         {% if context == 1 %}
-            {% with 'photos/'|add:ar_info.photo as image_static %}
-                <img src="{% static image_static %}" height="50" width="50" >
-            {% endwith %}     
+        <div >
+            {% with 'photos/'|add:arr_info.photo as image_static %}
+                <img src="{% static image_static %}" height="50" width="50">
+            {% endwith %}
+        </div>
         {% endif %}
     </div>
 

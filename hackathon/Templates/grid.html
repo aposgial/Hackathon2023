@@ -19,10 +19,10 @@
 
 <ul>
     {% if axis_flag %}
-        {% for i in 'X_axis' |make_list  %}
+        {% for i in X_axis |make_list  %}
             <div class="container-fluid">
                 <div class= "row row-cols-auto">
-                    {% for j in 'Y_axis' |make_list  %}
+                    {% for j in Y_axis |make_list  %}
                     <div class="col-xs-2">
                     </div>
                     {% endfor %}
@@ -32,7 +32,7 @@
 
     {% else %}
 
-            {{message}}
+      {{% message %}}
             
     {% endif %}
 </ul>

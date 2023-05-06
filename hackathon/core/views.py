@@ -8,6 +8,7 @@ def view(reqest):
             X_axis = str(reqest.GET.get('X'))
             Y_axis = str(reqest.GET.get('Y'))
             axis_flag = True
+            message = 'okk'
         except (TypeError, ArithmeticError):
             X_axis = 0
             Y_axis = 0

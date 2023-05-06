@@ -37,6 +37,66 @@ def shape_generator(shape_form:str):
             [0,0,0,0,0]
             ]
         return arr
+    
+    if shape_form == 'U':
+        arr:list = [
+            [0,0,0,0,0],
+            [0,0,0,0,0],
+            [0,1,0,1,0],
+            [0,1,1,1,0],
+            [0,0,0,0,0]
+            ]
+        return arr
+    
+    if shape_form == 'V':
+        arr:list = [
+            [0,0,0,0,0],
+            [0,0,0,1,0],
+            [0,0,0,1,0],
+            [0,1,1,1,0],
+            [0,0,0,0,0]
+            ]
+        return arr
+    
+    if shape_form == 'W':
+        arr:list = [
+            [0,0,0,0,0],
+            [0,1,0,0,0],
+            [0,1,1,0,0],
+            [0,0,1,1,0],
+            [0,0,0,0,0]
+            ]
+        return arr
+    
+    if shape_form == 'X':
+        arr:list = [
+            [0,0,0,0,0],
+            [0,0,1,0,0],
+            [0,1,1,1,0],
+            [0,0,1,0,0],
+            [0,0,0,0,0]
+            ]
+        return arr
+    
+    if shape_form == 'Y':
+        arr:list = [
+            [0,0,1,0,0],
+            [0,1,1,0,0],
+            [0,0,1,0,0],
+            [0,0,1,0,0],
+            [0,0,0,0,0]
+            ]
+        return arr
+    if shape_form == 'Z':
+        arr:list = [
+            [0,0,0,0,0],
+            [0,1,1,0,0],
+            [0,0,1,0,0],
+            [0,0,1,1,0],
+            [0,0,0,0,0]
+            ]
+        return arr
+
 
     if shape_form == 'I':
         for index in range(5):

@@ -36,7 +36,8 @@ def shape_generator(shape_form:str):
             [0,0,1,0,0],
             [0,0,0,0,0]
             ]
-        return arr
+        return {"arr":arr,
+                "photo":""}
 
     if shape_form == 'I':
         arr = [
@@ -47,7 +48,8 @@ def shape_generator(shape_form:str):
             [0,0,1,0,0]
             ]
        
-        return arr
+        return {"arr":arr,
+                "photo":""}
     
     if shape_form == 'L':
         arr = [
@@ -57,7 +59,8 @@ def shape_generator(shape_form:str):
             [0,0,1,0,0],
             [0,0,1,1,0]
             ]
-        return arr
+        return {"arr":arr,
+                "photo":""}
     
     if shape_form == 'N':
         arr = [
@@ -67,7 +70,8 @@ def shape_generator(shape_form:str):
             [0,0,1,0,0],
             [0,0,1,0,0]
             ]
-        return arr
+        return {"arr":arr,
+                "photo":""}
     
     if shape_form == 'P':
         arr = [
@@ -77,7 +81,8 @@ def shape_generator(shape_form:str):
             [0,0,1,0,0],
             [0,0,0,0,0]
             ]
-        return arr
+        return {"arr":arr,
+                "photo":""}
 
     if shape_form == 'T':
         arr = [
@@ -87,7 +92,8 @@ def shape_generator(shape_form:str):
             [0,0,1,0,0],
             [0,0,0,0,0]
             ]
-        return arr
+        return {"arr":arr,
+                "photo":""}
 
     
 
@@ -107,7 +113,7 @@ def shape(reqest):
         except Exception:
             message = 'wasted'
 
-        context:dict = {'arr': arr,
+        context:dict = {'arr_info': arr,
                         'axis_flag': axis_flag,
                         'message': message
                         }

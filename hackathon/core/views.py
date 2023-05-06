@@ -28,7 +28,7 @@ def shape_generator(shape_form:str):
     
 
     if shape_form == 'F':
-        arr:list = [
+        arr = [
             [0,0,0,0,0],
             [0,0,1,1,0],
             [0,1,1,0,0],
@@ -61,7 +61,7 @@ def shape_generator(shape_form:str):
         arr[3][2] = 1
         arr[3][3] = 1
 
-    if shape_form == 'P':
+    if shape_form == 'T':
         arr
 
     

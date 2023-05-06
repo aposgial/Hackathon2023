@@ -5,8 +5,8 @@ from django.shortcuts import render
 def view(reqest):
     if reqest.method == 'GET':
         try:
-            X_axis = int(reqest.GET.get('X'))
-            Y_axis = int(reqest.GET.get('Y'))
+            X_axis = str(reqest.GET.get('X'))
+            Y_axis = str(reqest.GET.get('Y'))
             axis_flag = True
         except (TypeError, ArithmeticError):
             X_axis = 0

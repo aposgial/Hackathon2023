@@ -175,6 +175,19 @@ def shape_rotatior(shape):
             rotated.append(array)
     return rotated
 
+def empty_space_counter(array) -> int:
+    if not array:
+        return None
+    
+    count:int = 0
+    for i in array:
+        for j in i:
+            if j == 0:
+                count +=1
+    return count
+
+    
+
 def shape(reqest):
     if reqest.method == 'GET':
         try:

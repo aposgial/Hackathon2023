@@ -172,7 +172,6 @@ def shape_generator(shape_form:str):
             ]
         return {"arr":arr,
                 "photo":"RED2.png"}
-    
 
 def shape_rotatior(shape):
     if not shape:

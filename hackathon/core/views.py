@@ -80,9 +80,6 @@ def shape_generator(shape_form:str):
         return arr
 
     if shape_form == 'T':
-<<<<<<< HEAD
-        arr
-=======
         arr = [
             [0,0,0,0,0],
             [0,1,1,1,0],
@@ -91,7 +88,6 @@ def shape_generator(shape_form:str):
             [0,0,0,0,0]
             ]
         return arr
->>>>>>> c83931bf4834bd5965fc4cd389ae3c0d0dd674cc
 
     
 

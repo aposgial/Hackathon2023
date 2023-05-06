@@ -7,9 +7,12 @@
           <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
            <style type="text/css">
-           .col-xs-2 {
-            border:3px solid rgb(0, 173, 20);
+           
+           .square {
+            border:2px solid rgb(0, 173, 20);
             height: 50px;
+            width: 50px;
+            
            }
            </style>
 {% endblock %}
@@ -17,25 +20,29 @@
 {% block content %}
            <br><br><br>
 
-<ul>
+<center>
+    <br>
     {% if axis_flag %}
-        {% for i in X_axis |make_list  %}
-            <div class="container-fluid">
-                <div class= "row row-cols-auto">
-                    {% for j in Y_axis |make_list  %}
-                    <div class="col-xs-2">
+        {% for i in X_axis   %}
+
+            <div class="container">
+                <div class= "row ">
+                    {% for j in Y_axis  %}
+                    <div class="square">
                     </div>
                     {% endfor %}
                 </div>
             </div>
+        
         {% endfor %}
 
     {% else %}
 
-      {{% message %}}
+      {{message}}
             
     {% endif %}
-</ul>
+    <br>
+</center>
 
 
 
@@ -47,9 +54,11 @@
             <form id="searchbar" method="get" action="">
                 <br><br><br><br><br><br><br><br>
                 <div class="mb-3 w-25">
+                    <label >X</label>
                     <input type="search" name="X" class="form-control me-2">
                 </div>
                 <div class="mb-3 w-25">
+                    <label>Y</label>
                     <input type="search" name="Y" class="form-control me-2">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>

@@ -5,6 +5,7 @@ from . import views
 urlpatterns = [
 	
 	path('', views.view),
+    path('shapes', views.shape)
     
 
 	

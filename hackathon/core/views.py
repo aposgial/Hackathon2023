@@ -38,6 +38,17 @@ def shape_generator(shape_form:str):
             ]
         return {"arr":arr,
                 "photo":"BLUE.png"}
+    
+    if shape_form == 'F90':
+        arr = [
+            [0,0,0,0,0],
+            [0,0,1,0,0],
+            [0,1,1,1,0],
+            [0,0,0,1,0],
+            [0,0,0,0,0]
+            ]
+        return {"arr":arr,
+                "photo":"BLUE.png"}
 
     if shape_form == 'I':
         arr = [

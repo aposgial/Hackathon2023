@@ -1,7 +1,8 @@
 from django.shortcuts import render
+from hackathon.mixins import ReversableList
 
 # Create your views here.
-
+context = {}
 def view(reqest):
     if reqest.method == 'GET':
         try:
@@ -161,26 +162,35 @@ def shape_generator(shape_form:str):
         return {"arr":arr,
                 "photo":"RED2.png"}
 
+def shape_rotatior(shape):
+    if not shape:
+        return None
     
+    rotated = []
+    for array in shape:
+        if 1 in array:
+            reversible = ReversableList(array)
+            rotated.append(reversible.reverse())
+        else:
+            rotated.append(array)
+    return rotated
 
 def shape(reqest):
     if reqest.method == 'GET':
         try:
             arr_info = shape_generator(str(reqest.GET.get('option')))
-
             axis_flag = True
             message = 'ok'
         except (TypeError, ArithmeticError):
-            X_axis = 0
-            Y_axis = 0
             axis_flag = False
             message = 'input error'
         except Exception:
             message = 'wasted'
-
+        
         context:dict = {'arr_info': arr_info,
                         'axis_flag': axis_flag,
                         'message': message
                         }
+
         
     return render(reqest,'shapes.html', context=context)

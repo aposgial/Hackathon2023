@@ -37,11 +37,7 @@ def shape_generator(shape_form:str):
             [0,0,0,0,0]
             ]
         return {"arr":arr,
-<<<<<<< HEAD
-                "photo":""}
-=======
                 "photo":"BLUE.png"}
->>>>>>> ded1a44f2310b5d248dbfb93f1d04993b99ea880
 
     if shape_form == 'I':
         arr = [

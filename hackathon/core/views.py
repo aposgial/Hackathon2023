@@ -29,7 +29,7 @@ def shape_generator(shape_form:str):
     
 
     if shape_form == 'F':
-        arr:list = [
+        arr = [
             [0,0,0,0,0],
             [0,0,1,1,0],
             [0,1,1,0,0],
@@ -39,31 +39,55 @@ def shape_generator(shape_form:str):
         return arr
 
     if shape_form == 'I':
-        for index in range(5):
-            arr[2][index] = 1
+        arr = [
+            [0,0,1,0,0],
+            [0,0,1,0,0],
+            [0,0,1,0,0],
+            [0,0,1,0,0],
+            [0,0,1,0,0]
+            ]
+       
         return arr
     
     if shape_form == 'L':
-        for index in range(4):
-            arr[2][1 + index] = 1
-        arr[3][4] = 1
+        arr = [
+            [0,0,0,0,0],
+            [0,0,1,0,0],
+            [0,0,1,0,0],
+            [0,0,1,0,0],
+            [0,0,1,1,0]
+            ]
         return arr
     
     if shape_form == 'N':
-        for index in range(4):
-            arr[3][1 + index] = 1
-        arr[2][3] = 1
-        arr[2][4] = 1
+        arr = [
+            [0,0,0,1,0],
+            [0,0,0,1,0],
+            [0,0,1,1,0],
+            [0,0,1,0,0],
+            [0,0,1,0,0]
+            ]
         return arr
     
     if shape_form == 'P':
-        for index in range(4):
-            arr[2][2 + index] = 1
-        arr[3][2] = 1
-        arr[3][3] = 1
+        arr = [
+            [0,0,0,0,0],
+            [0,0,1,1,0],
+            [0,0,1,1,0],
+            [0,0,1,0,0],
+            [0,0,0,0,0]
+            ]
+        return arr
 
-    if shape_form == 'P':
-        arr
+    if shape_form == 'T':
+        arr = [
+            [0,0,0,0,0],
+            [0,1,1,1,0],
+            [0,0,1,0,0],
+            [0,0,1,0,0],
+            [0,0,0,0,0]
+            ]
+        return arr
 
     
 

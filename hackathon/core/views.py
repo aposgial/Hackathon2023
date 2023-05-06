@@ -95,6 +95,72 @@ def shape_generator(shape_form:str):
         return {"arr":arr,
                 "photo":"LIGHTGRAY.png"}
 
+    if shape_form == 'U':
+        arr = [
+            [0,0,0,0,0],
+            [0,0,0,0,0],
+            [0,1,0,1,0],
+            [0,1,1,1,0],
+            [0,0,0,0,0]
+            ]
+        return {"arr":arr,
+                "photo":"GREEN.png"}
+    
+    if shape_form == 'V':
+        arr = [
+            [0,0,0,0,0],
+            [0,0,0,1,0],
+            [0,0,0,1,0],
+            [0,1,1,1,0],
+            [0,0,0,0,0]
+            ]
+        return {"arr":arr,
+                "photo":"ORANGE.png"}
+    
+    if shape_form == 'W':
+        arr = [
+            [0,0,0,0,0],
+            [0,1,0,0,0],
+            [0,1,1,0,0],
+            [0,0,1,1,0],
+            [0,0,0,0,0]
+            ]
+        return {"arr":arr,
+                "photo":"LIGHTGRAY.png"}
+    
+    if shape_form == 'X':
+        arr = [
+            [0,0,0,0,0],
+            [0,0,1,0,0],
+            [0,1,1,1,0],
+            [0,0,1,0,0],
+            [0,0,0,0,0]
+            ]
+        return {"arr":arr,
+                "photo":"BLUE.png"}
+    
+    if shape_form == 'Y':
+        arr = [
+            [0,0,1,0,0],
+            [0,1,1,0,0],
+            [0,0,1,0,0],
+            [0,0,1,0,0],
+            [0,0,0,0,0]
+            ]
+        return {"arr":arr,
+                "photo":"PING2.png"}
+    
+    if shape_form == 'Z':
+        arr = [
+            [0,0,0,0,0],
+            [0,1,1,0,0],
+            [0,0,1,0,0],
+            [0,0,1,1,0],
+            [0,0,0,0,0]
+            ]
+        return {"arr":arr,
+                "photo":"RED2.png"}
+
     
 
 def shape(reqest):

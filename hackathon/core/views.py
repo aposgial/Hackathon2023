@@ -26,15 +26,15 @@ def shape_generator(shape_form:str):
     if not shape_form:
         return None
     
-    rows, cols = (5, 5)
-    arr = [[0]*cols]*rows
 
     if shape_form == 'F':
-        arr[2][2] = 1
-        arr[2][3] = 1
-        arr[3][1] = 1
-        arr[3][2] = 1
-        arr[4][2] = 1
+        arr:list = [
+            [0,0,0,0,0],
+            [0,0,1,1,0],
+            [0,1,1,0,0],
+            [0,0,1,0,0],
+            [0,0,0,0,0]
+            ]
         return arr
 
     if shape_form == 'I':
@@ -47,6 +47,23 @@ def shape_generator(shape_form:str):
             arr[2][1 + index] = 1
         arr[3][4] = 1
         return arr
+    
+    if shape_form == 'N':
+        for index in range(4):
+            arr[3][1 + index] = 1
+        arr[2][3] = 1
+        arr[2][4] = 1
+        return arr
+    
+    if shape_form == 'P':
+        for index in range(4):
+            arr[2][2 + index] = 1
+        arr[3][2] = 1
+        arr[3][3] = 1
+
+    if shape_form == 'P':
+        arr
+
     
 
 def shape(reqest):

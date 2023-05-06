@@ -9,7 +9,7 @@ def view(reqest):
             Y_axis = [None] * int(reqest.GET.get('Y'))
             axis_flag = True
             message = 'okk'
-        except (TypeError, ArithmeticError):
+        except (TypeError, ArithmeticError, Exception):
             X_axis = 0
             Y_axis = 0
             axis_flag = False

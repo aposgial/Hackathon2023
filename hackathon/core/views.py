@@ -36,72 +36,8 @@ def shape_generator(shape_form:str):
             [0,0,1,0,0],
             [0,0,0,0,0]
             ]
-<<<<<<< HEAD
-        return arr
-    
-    if shape_form == 'U':
-        arr:list = [
-            [0,0,0,0,0],
-            [0,0,0,0,0],
-            [0,1,0,1,0],
-            [0,1,1,1,0],
-            [0,0,0,0,0]
-            ]
-        return arr
-    
-    if shape_form == 'V':
-        arr:list = [
-            [0,0,0,0,0],
-            [0,0,0,1,0],
-            [0,0,0,1,0],
-            [0,1,1,1,0],
-            [0,0,0,0,0]
-            ]
-        return arr
-    
-    if shape_form == 'W':
-        arr:list = [
-            [0,0,0,0,0],
-            [0,1,0,0,0],
-            [0,1,1,0,0],
-            [0,0,1,1,0],
-            [0,0,0,0,0]
-            ]
-        return arr
-    
-    if shape_form == 'X':
-        arr:list = [
-            [0,0,0,0,0],
-            [0,0,1,0,0],
-            [0,1,1,1,0],
-            [0,0,1,0,0],
-            [0,0,0,0,0]
-            ]
-        return arr
-    
-    if shape_form == 'Y':
-        arr:list = [
-            [0,0,1,0,0],
-            [0,1,1,0,0],
-            [0,0,1,0,0],
-            [0,0,1,0,0],
-            [0,0,0,0,0]
-            ]
-        return arr
-    if shape_form == 'Z':
-        arr:list = [
-            [0,0,0,0,0],
-            [0,1,1,0,0],
-            [0,0,1,0,0],
-            [0,0,1,1,0],
-            [0,0,0,0,0]
-            ]
-        return arr
-
-=======
         return {"arr":arr,
                 "photo":""}
->>>>>>> de79816f6137158fbe7b080a8b7211a23ce4756d
 
     if shape_form == 'I':
         arr = [
@@ -159,6 +95,14 @@ def shape_generator(shape_form:str):
         return {"arr":arr,
                 "photo":""}
 
+def shape_rotation(shape):
+    if not shape:
+        return None
+    
+    for array in shape:
+        for index in array:
+            if index == 1:
+                return shape
     
 
 def shape(reqest):

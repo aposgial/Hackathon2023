@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+
+{% block extend_head %}
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+          <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+           <style type="text/css">
+           
+           .square {
+            border:2px solid rgb(0, 173, 20);
+            height: 50px;
+            width: 50px;
+            
+           }
+           
+           </style>
+{% endblock %}
+
+{% block content %}
+           <br><br><br>
+
+           
+<center>
+    <br>
+    <div class="card bg-dark text-white">
+        <div class="card-img-overlay">
+            <form id="searchbar" method="get" action="">
+                <br><br><br><br><br><br><br><br>
+                <div class="mb-3 w-25">
+                    <label >Latter</label>
+                    <input type="search" name="option" class="form-control me-2">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</center>
+
+{% for array in arr %}
+    <div class="container">
+        <div class= "row ">
+    {% for context in array %}
+    <div class="square">
+        <h3> {{context}} </h3>
+        {% if context == 1 %}
+           <!-- <img src="\image\square.jpg" alt="blue" width="50" height="50">  -->     
+        {% endif %}
+    </div>
+
+
+    {% endfor %}
+</div>
+</div>
+{% endfor %}
+
+
+{% endblock%}

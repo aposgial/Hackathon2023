@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from hackathon.mixins import ReversableList
 from .forms import CHOICES
+from django.utils import datastructures as ds
 
 # Create your views here.
 context = {}
@@ -196,13 +197,24 @@ def shape_rotatior(shape):
 def rotate(request):
     form = CHOICES(request.POST)
     data = request.POST
-    print(data['NUMS'])
-    data1 = shape_generator(str(data['NUMS']))
-    data2 = shape_rotatior(data1['arr'])
-    
-    print(data1['arr'])
-    print(data2)
-    return render(request,'rotates.html', {'form':form})
+    #print(data['NUMS'])
+    try:
+        data1 = shape_generator(str(data['NUMS']))
+        data2 = shape_rotatior(data1['arr'])
+        
+        print(data1['arr'])
+        print(data2)
+    except ds.MultiValueDictKeyError:
+        return render(request,'rotates.html', {'form':form})
+
+    context:dict ={
+                    'arr_info':{'arr':data2,
+                                'photo':data1['photo']},
+                    'axis_flag': True,
+                    'message': "Hi",
+                    'form':form
+    }
+    return render(request,'rotates.html', context=context)
 
 def shape(reqest):
     if reqest.method == 'GET':

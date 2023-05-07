@@ -32,9 +32,7 @@
           
            </style>
 {% endblock %}
-
-{% block content %}     
-
+{% block content %} 
 <br>
 
 
@@ -52,22 +50,25 @@
         </div>
     </div>
 
-{% endfor %}
+
+    {% endfor %}
+</div>
+</div>
+{% endfor %} 
 
 <center>
-    <br>
-    <div class="card bg-dark text-white">
-        <div class="card-img-overlay">
-            <form id="searchbar" method="get" action="">
-                <br><br><br><br><br><br><br><br>
-                <div class="mb-3 w-25">
-                    <label style="color: rgb(43, 73, 82);">Latter</label>
-                    <input type="search" name="option" class="form-control me-2 " style="color:rgb(70, 69, 69)" >
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-    </div>
+  <br><br><br><br>
+  <div class="card bg-dark text-white">
+   <div class="card-img-overlay">
+        <form class="form-inline" method='POST' action="" enctype='multipart/form-data'>{% csrf_token %}
+          <div style="background-color: lightgrey; color: black;"
+          {{form.NUMS}}
+          <input type="hidden" name="array" class="form-control me-2 " value="{{ arr_info.arr }}">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+  </div>
 </center>
+
 
 {% endblock%}

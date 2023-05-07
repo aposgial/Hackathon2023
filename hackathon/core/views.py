@@ -1,13 +1,16 @@
 from django.shortcuts import render
+from .controller import Controller
+from .exceptions import *
 from hackathon.mixins import ReversableList
+from .forms import CHOICES
+from django.utils import datastructures as ds
 
 # Create your views here.
-context = {}
-def view(reqest):
-    if reqest.method == 'GET':
+def view(request):
+    if request.method == 'GET':
         try:
-            X_axis = [None] * int(reqest.GET.get('X'))
-            Y_axis = [None] * int(reqest.GET.get('Y'))
+            X_axis = [None] * int(request.GET.get('X'))
+            Y_axis = [None] * int(request.GET.get('Y'))
             axis_flag = True
             message = 'okk'
         except (TypeError, ArithmeticError, Exception):
@@ -22,181 +25,50 @@ def view(reqest):
                         'message': message
                         }
         
-    return render(reqest,'grid.html', context=context)
+    return render(request,'grid.html', context=context)
 
-def shape_generator(shape_form:str):
-    if not shape_form:
-        return None
-    
 
-    if shape_form == 'F':
-        arr = [
-            [0,0,0,0,0],
-            [0,0,1,1,0],
-            [0,1,1,0,0],
-            [0,0,1,0,0],
-            [0,0,0,0,0]
-            ]
-        return {"arr":arr,
-                "photo":"BLUE.png"}
-    
-    if shape_form == 'F90':
-        arr = [
-            [0,0,0,0,0],
-            [0,0,1,0,0],
-            [0,1,1,1,0],
-            [0,0,0,1,0],
-            [0,0,0,0,0]
-            ]
-        return {"arr":arr,
-                "photo":"BLUE.png"}
+def rotate(request):
+    controller = Controller()
+    form = CHOICES(request.POST)
+    data = request.POST
 
-    if shape_form == 'I':
-        arr = [
-            [0,0,1,0,0],
-            [0,0,1,0,0],
-            [0,0,1,0,0],
-            [0,0,1,0,0],
-            [0,0,1,0,0]
-            ]
-       
-        return {"arr":arr,
-                "photo":"RED.png"}
-    
-    if shape_form == 'L':
-        arr = [
-            [0,0,0,0,0],
-            [0,0,1,0,0],
-            [0,0,1,0,0],
-            [0,0,1,0,0],
-            [0,0,1,1,0]
-            ]
-        return {"arr":arr,
-                "photo":"YELLOW.png"}
-    
-    if shape_form == 'N':
-        arr = [
-            [0,0,0,1,0],
-            [0,0,0,1,0],
-            [0,0,1,1,0],
-            [0,0,1,0,0],
-            [0,0,1,0,0]
-            ]
-        return {"arr":arr,
-                "photo":"PING.png"}
-    
-    if shape_form == 'P':
-        arr = [
-            [0,0,0,0,0],
-            [0,0,1,1,0],
-            [0,0,1,1,0],
-            [0,0,1,0,0],
-            [0,0,0,0,0]
-            ]
-        return {"arr":arr,
-                "photo":"LIGHTBLUE.png"}
-
-    if shape_form == 'T':
-        arr = [
-            [0,0,0,0,0],
-            [0,1,1,1,0],
-            [0,0,1,0,0],
-            [0,0,1,0,0],
-            [0,0,0,0,0]
-            ]
-        return {"arr":arr,
-                "photo":"LIGHTGRAY.png"}
-
-    if shape_form == 'U':
-        arr = [
-            [0,0,0,0,0],
-            [0,0,0,0,0],
-            [0,1,0,1,0],
-            [0,1,1,1,0],
-            [0,0,0,0,0]
-            ]
-        return {"arr":arr,
-                "photo":"GREEN.png"}
-    
-    if shape_form == 'V':
-        arr = [
-            [0,0,0,0,0],
-            [0,0,0,1,0],
-            [0,0,0,1,0],
-            [0,1,1,1,0],
-            [0,0,0,0,0]
-            ]
-        return {"arr":arr,
-                "photo":"ORANGE.png"}
-    
-    if shape_form == 'W':
-        arr = [
-            [0,0,0,0,0],
-            [0,1,0,0,0],
-            [0,1,1,0,0],
-            [0,0,1,1,0],
-            [0,0,0,0,0]
-            ]
-        return {"arr":arr,
-                "photo":"LIGHTGRAY.png"}
-    
-    if shape_form == 'X':
-        arr = [
-            [0,0,0,0,0],
-            [0,0,1,0,0],
-            [0,1,1,1,0],
-            [0,0,1,0,0],
-            [0,0,0,0,0]
-            ]
-        return {"arr":arr,
-                "photo":"BLUE.png"}
-    
-    if shape_form == 'Y':
-        arr = [
-            [0,0,1,0,0],
-            [0,1,1,0,0],
-            [0,0,1,0,0],
-            [0,0,1,0,0],
-            [0,0,0,0,0]
-            ]
-        return {"arr":arr,
-                "photo":"PING2.png"}
-    
-    if shape_form == 'Z':
-        arr = [
-            [0,0,0,0,0],
-            [0,1,1,0,0],
-            [0,0,1,0,0],
-            [0,0,1,1,0],
-            [0,0,0,0,0]
-            ]
-        return {"arr":arr,
-                "photo":"RED2.png"}
-
-def shape_rotatior(shape):
-    if not shape:
-        return None
-    
-    rotated = []
-    for array in shape:
-        if 1 in array:
-            reversible = ReversableList(array)
-            rotated.append(reversible.reverse())
+    try:
+        original = controller.shape_generator(str(data['NUMS']))
+        if data['array'] != controller.shape_rotatior(original['arr']):
+            rotated = controller.shape_rotatior(original['arr'])
         else:
-            rotated.append(array)
-    return rotated
+            print('problem')
+            rotated = original['arr']
+
+        print(data['array'])
+        print(original['arr'])
+        print(rotated)
+    except ds.MultiValueDictKeyError:
+        return render(request,'rotates.html', {'form':form})
+
+    context:dict ={
+                    'arr_info':{'arr':rotated,
+                                'photo':original['photo']},
+                    'axis_flag': True,
+                    'message': "Hi",
+                    'form':form
+    }
+    return render(request,'rotates.html', context=context)
 
 def shape(reqest):
+    controller = Controller()
     if reqest.method == 'GET':
         try:
-            arr_info = shape_generator(str(reqest.GET.get('option')))
+            arr_info = controller.shape_generator(str(reqest.GET.get('option')))
             axis_flag = True
             message = 'ok'
         except (TypeError, ArithmeticError):
             axis_flag = False
-            message = 'input error'
-        except Exception:
-            message = 'wasted'
+            message = 'input error, give only latters'
+        except EmplyParameterError:
+            axis_flag = False
+            message = 'give a later'
         
         context:dict = {'arr_info': arr_info,
                         'axis_flag': axis_flag,
@@ -205,3 +77,4 @@ def shape(reqest):
 
         
     return render(reqest,'shapes.html', context=context)
+

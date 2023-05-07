@@ -38,8 +38,8 @@
   <br><br><br><br>
   <div class="card bg-dark text-white">
    <div class="card-img-overlay">
-        <form id="searchbar" method="get" action="">   
-            <div style="background-color: grey;">
+        <!--<form id="searchbar" method="get" action=""> 
+            <div style="background-color: rgb(94, 82, 82);">
              <div class="form-check">
               <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
               <label class="form-check-label" for="exampleRadios1" style="color: #001fc4;">
@@ -49,7 +49,7 @@
 
             <div class="form-check">
               <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-              <label class="form-check-label" for="exampleRadios2" style="color: #001fc4;">
+              <label class="form-check-label" for="exampleRadios2" style="color: #9c1516;">
                 I
               </label>
             </div>
@@ -125,6 +125,12 @@
             </div>
              
           </div>     
+        </form>-->
+        <form class="form-inline" method='POST' action="" enctype='multipart/form-data'>{% csrf_token %}
+          <div style="background-color: lightgrey;"
+          {{form.NUMS}}
+        
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
   </div>

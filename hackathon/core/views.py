@@ -32,19 +32,24 @@ def rotate(request):
     controller = Controller()
     form = CHOICES(request.POST)
     data = request.POST
-    #print(data['NUMS'])
+
     try:
-        data1 = controller.shape_generator(str(data['NUMS']))
-        data2 = controller.shape_rotatior(data1['arr'])
-        
-        print(data1['arr'])
-        print(data2)
+        original = controller.shape_generator(str(data['NUMS']))
+        if data['array'] != controller.shape_rotatior(original['arr']):
+            rotated = controller.shape_rotatior(original['arr'])
+        else:
+            print('problem')
+            rotated = original['arr']
+
+        print(data['array'])
+        print(original['arr'])
+        print(rotated)
     except ds.MultiValueDictKeyError:
         return render(request,'rotates.html', {'form':form})
 
     context:dict ={
-                    'arr_info':{'arr':data2,
-                                'photo':data1['photo']},
+                    'arr_info':{'arr':rotated,
+                                'photo':original['photo']},
                     'axis_flag': True,
                     'message': "Hi",
                     'form':form

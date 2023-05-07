@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .controller import Controller
 from .exceptions import *
-
+from hackathon.mixins import ReversableList
+from .forms import CHOICES
 
 # Create your views here.
 def view(request):
@@ -26,6 +27,17 @@ def view(request):
     return render(request,'grid.html', context=context)
 
 
+def rotate(request):
+    form = CHOICES(request.POST)
+    data = request.POST
+    print(data['NUMS'])
+    data1 = shape_generator(str(data['NUMS']))
+    data2 = shape_rotatior(data1['arr'])
+    
+    print(data1['arr'])
+    print(data2)
+    return render(request,'rotates.html', {'form':form})
+
 def shape(reqest):
     controller = Controller()
     if reqest.method == 'GET':
@@ -45,4 +57,6 @@ def shape(reqest):
                         'message': message
                         }
 
+        
     return render(reqest,'shapes.html', context=context)
+

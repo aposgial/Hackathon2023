@@ -1,0 +1,2 @@
+class EmplyParameterError(Exception):
+    pass

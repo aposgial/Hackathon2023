@@ -1,4 +1,5 @@
 from hackathon.mixins import ReversableList
+from .exceptions import *
 
 class Controller():
     def __init__(self) -> None:
@@ -6,7 +7,7 @@ class Controller():
 
     def shape_generator(self, shape_form:str):
         if not shape_form:
-            return None
+            raise EmplyParameterError
         
 
         if shape_form == 'F':
@@ -142,9 +143,9 @@ class Controller():
             return {"arr":arr,
                     "photo":"RED2.png"}
         
-    def shape_rotatior(self, shape):
+    def shape_rotatior(self, shape) -> list:
         if not shape:
-            return None
+            raise EmplyParameterError
         
         rotated = []
         for array in shape:
@@ -157,7 +158,7 @@ class Controller():
     
     def empty_space_counter(array) -> int:
         if not array:
-            return None
+            raise EmplyParameterError
         
         count:int = 0
         for i in array:

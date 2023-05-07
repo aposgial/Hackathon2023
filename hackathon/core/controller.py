@@ -5,7 +5,8 @@ class Controller():
     def __init__(self) -> None:
         pass
 
-    def shape_generator(self, shape_form:str):
+
+    def shape_generator(self, shape_form:str) -> dict:
         if not shape_form:
             raise EmplyParameterError
         

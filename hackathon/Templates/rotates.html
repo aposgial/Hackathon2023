@@ -63,8 +63,15 @@
         <form class="form-inline" method='POST' action="" enctype='multipart/form-data'>{% csrf_token %}
           <div style="background-color: lightgrey; color: black;"
           {{form.NUMS}}
+          <label style="color: rgb(17, 88, 114);">Rotates</label>
+          <div class="mb-3 w-25">
+            <input type="search" name="R" class="form-control me-2" style= " background-color: rgb(174, 165, 165);">
+          </div>
           <input type="hidden" name="array" class="form-control me-2 " value="{{ arr_info.arr }}">
           <button type="submit" class="btn btn-primary">Submit</button>
+          <br><br>
+          <img src="https://github.com/serrestech/hackathon-topic/raw/main/images/shapes_all.png">
+          
         </form>
       </div>
   </div>

@@ -1,11 +1,11 @@
-from hackathon.mixins import ReversableList
+from hackathon.mixins import calculate_execution_time, ReversableList
 from .exceptions import *
 
 class Controller():
     def __init__(self) -> None:
         pass
 
-
+    @calculate_execution_time
     def shape_generator(self, shape_form:str) -> dict:
         if not shape_form:
             raise EmplyParameterError
@@ -143,7 +143,8 @@ class Controller():
                 ]
             return {"arr":arr,
                     "photo":"RED2.png"}
-        
+    
+    @calculate_execution_time
     def shape_rotatior(self, shape) -> list:
         if not shape:
             raise EmplyParameterError
@@ -157,6 +158,7 @@ class Controller():
                 rotated.append(array)
         return rotated
     
+    @calculate_execution_time
     def empty_space_counter(array) -> int:
         if not array:
             raise EmplyParameterError

@@ -2,9 +2,11 @@ from django.shortcuts import render
 from .controller import Controller
 from .exceptions import *
 from .forms import CHOICES
+from hackathon.mixins import calculate_execution_time
 from django.utils import datastructures as ds
 
 # Create your views here.
+@calculate_execution_time
 def view(request):
     if request.method == 'GET':
         try:
@@ -26,7 +28,7 @@ def view(request):
         
     return render(request,'grid.html', context=context)
 
-
+@calculate_execution_time
 def rotate(request):
 
     controller = Controller()
@@ -49,6 +51,7 @@ def rotate(request):
     }
     return render(request,'rotates.html', context=context)
 
+@calculate_execution_time
 def shape(reqest):
     controller = Controller()
     if reqest.method == 'GET':
@@ -67,7 +70,6 @@ def shape(reqest):
                         'axis_flag': axis_flag,
                         'message': message
                         }
-
-        
+  
     return render(reqest,'shapes.html', context=context)
 

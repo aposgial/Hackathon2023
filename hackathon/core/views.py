@@ -25,6 +25,10 @@ def view(reqest):
     return render(reqest,'grid.html', context=context)
 
 def shape_generator(shape_form:str):
+     
+
+
+
     if not shape_form:
         return None
     
@@ -186,6 +190,9 @@ def shape_rotatior(shape):
             rotated.append(array)
     return rotated
 
+def rotate(reqest):
+        
+    return render(reqest,'rotates.html')
 def shape(reqest):
     if reqest.method == 'GET':
         try:
@@ -205,3 +212,4 @@ def shape(reqest):
 
         
     return render(reqest,'shapes.html', context=context)
+

@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block extend_head %}
+  <style type="text/css">
+           
+           .square {
+            border:2px solid rgb(8, 25, 10);
+            height: 50px;
+            width: 50px;
+            
+            
+           }
+           .row{
+            margin-left: 500px
+
+           }
+           .header{
+            
+            text-align: center;
+           }
+           .latt{
+            margin-left: 37px;
+            text-align: center;
+           }
+          .counter{
+            margin-left: 100px;
+          }
+           
+        
+          
+           </style>
+{% endblock %}
+{% block content %}  
+
+<center>
+  <br><br><br><br>
+  <div class="card bg-dark text-white">
+   <div class="card-img-overlay">
+        <form id="searchbar" method="get" action="">   
+            <div style="background-color: grey;">
+             <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+              <label class="form-check-label" for="exampleRadios1" style="color: #001fc4;">
+                F
+              </label>
+              </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+              <label class="form-check-label" for="exampleRadios2" style="color: #001fc4;">
+                I
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+              <label class="form-check-label" for="exampleRadios3" style="color: #efee29;">
+               L
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
+              <label class="form-check-label" for="exampleRadios4" style="color: #e719e2;">
+                N
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5" value="option5">
+              <label class="form-check-label" for="exampleRadios5" style="color: #07d4f3;">
+                P
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios6" value="option6">
+              <label class="form-check-label" for="exampleRadios6" style="color: #8a8a8a;">
+                T
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios7" value="option7">
+              <label class="form-check-label" for="exampleRadios7" style="color: #00e53f;">
+                U
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios8" value="option">
+              <label class="form-check-label" for="exampleRadios8" style="color: #f19a05;">
+                V
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios9" value="option9">
+              <label class="form-check-label" for="exampleRadios9" style="color:#d5d5d5;">
+                W
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios10" value="option10">
+              <label class="form-check-label" for="exampleRadios10" style="color: #2097b8;">
+                X
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios11" value="option11">
+              <label class="form-check-label" for="exampleRadios11" style="color: #b82082;">
+                Y
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios12" value="option12">
+              <label class="form-check-label" for="exampleRadios12" style="color: #ff0011;">
+                Z
+              </label>
+            </div>
+             
+          </div>     
+        </form>
+      </div>
+  </div>
+</center>
+
+
+{% endblock%}

@@ -37,10 +37,6 @@ def rotate(request):
         original = controller.shape_generator(str(data['NUMS']))
         rotated = controller.shape_rotatior(original['arr'])
 
-
-        print(data['array'])
-        print(original['arr'])
-        print(rotated)
     except ds.MultiValueDictKeyError:
         return render(request,'rotates.html', {'form':form})
 

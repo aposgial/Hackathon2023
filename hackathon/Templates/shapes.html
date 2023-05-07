@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block extend_head %}
+  <style type="text/css">
+           
+           .square {
+            border:2px solid rgb(8, 25, 10);
+            height: 50px;
+            width: 50px;
+            
+            
+           }
+           .row{
+            margin-left: 500px
+
+           }
+           .header{
+            
+            text-align: center;
+           }
+           .latt{
+            margin-left: 37px;
+            text-align: center;
+           }
+          .counter{
+            margin-left: 100px;
+          }
+           
+        
+          
+           </style>
+{% endblock %}
+
+{% block content %}     
+
+<br>
+
+
+{% for array in arr_info.arr %}
+    <div class="container">
+    <div class= "row ">
+    {% for context in array %}
+    <div class="square">
+        <div class ="latt">
+        {% if context == 1 %}    
+            {% with 'photos/'|add:arr_info.photo as image_static %}
+                <img src="{% static image_static %}" style=height:50px; width=50px;>
+            {% endwith %}
+        {% endif %}
+        </div>
+    </div>
+
+
+    {% endfor %}
+</div>
+</div>
+{% endfor %}
+
+<center>
+    <br>
+    <div class="card bg-dark text-white">
+        <div class="card-img-overlay">
+            <form id="searchbar" method="get" action="">
+                <br><br><br><br><br><br><br><br>
+                <div class="mb-3 w-25">
+                    <label style="color: rgb(43, 73, 82);">Latter</label>
+                    <input type="search" name="option" class="form-control me-2 " style="background-color: rgb(174, 165, 165);" >
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</center>
+
+
+{% endblock%}

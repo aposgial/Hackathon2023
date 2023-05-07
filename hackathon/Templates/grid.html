@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+
+{% block extend_head %}
+   <style type="text/css">
+           
+           .square {
+            border:2px solid rgb(8, 25, 10);
+            height: 50px;
+            width: 50px;
+            
+           }
+           
+           
+           </style>
+{% endblock %}
+
+{% block content %}
+           <br><br><br>
+
+<center>
+    <br>
+    {% if axis_flag %}
+        {% for i in X_axis   %}
+
+            <div class="container">
+                <div class= "row ">
+                    {% for j in Y_axis  %}
+                    <div class="square">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        
+        {% endfor %}
+
+    {% else %}
+
+      {{message}}
+            
+    {% endif %}
+    <br>
+</center>
+
+<center>
+<form>
+    <i class="fas fa-search icon"></i>
+</form>
+</center>
+
+<center>
+    <br>
+    <div class="card bg-dark text-white">
+        <div class="card-img-overlay">
+            <form id="searchbar" method="get" action="">
+                <br><br><br><br><br><br><br><br>
+                <div class="mb-3 w-25">
+                    <label style="color: rgb(17, 88, 114);">X</label>
+                    <input type="search" name="X" class="form-control me-2 style="background-color: rgb(174, 165, 165);">
+                </div>
+                <div class="mb-3 w-25">
+                    <label style="color: rgb(17, 88, 114);">Y</label>
+                    <input type="search" name="Y" class="form-control me-2 style="background-color: rgb(174, 165, 165);">
+                </div>
+                <div class="mb-3 w-25">
+                    <label style="color: rgb(17, 88, 114);">Symbol</label>
+                    <input type="search" name="Symbol" class="form-control me-2 style="background-color: rgb(174, 165, 165);">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</center>
+
+
+{% endblock %}
+
+
+
+
+

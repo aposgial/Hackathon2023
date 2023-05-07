@@ -35,11 +35,8 @@ def rotate(request):
 
     try:
         original = controller.shape_generator(str(data['NUMS']))
-        if data['array'] != controller.shape_rotatior(original['arr']):
-            rotated = controller.shape_rotatior(original['arr'])
-        else:
-            print('problem')
-            rotated = original['arr']
+        rotated = controller.shape_rotatior(original['arr'])
+
 
         print(data['array'])
         print(original['arr'])
@@ -77,3 +74,4 @@ def shape(reqest):
 
         
     return render(reqest,'shapes.html', context=context)
+

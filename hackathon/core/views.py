@@ -28,11 +28,12 @@ def view(request):
 
 
 def rotate(request):
+    controller = Controller()
     form = CHOICES(request.POST)
     data = request.POST
     print(data['NUMS'])
-    data1 = shape_generator(str(data['NUMS']))
-    data2 = shape_rotatior(data1['arr'])
+    data1 = controller.shape_generator(str(data['NUMS']))
+    data2 = controller.shape_rotatior(data1['arr'])
     
     print(data1['arr'])
     print(data2)

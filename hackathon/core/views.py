@@ -3,7 +3,7 @@ from .controller import Controller
 from .exceptions import *
 from hackathon.mixins import ReversableList
 from .forms import CHOICES
-from django.utils import datastructures as ds
+from django.utils import datastructures as ds 
 
 # Create your views here.
 def view(request):

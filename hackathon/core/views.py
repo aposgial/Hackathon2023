@@ -28,6 +28,7 @@ def view(request):
 
 
 def rotate(request):
+
     controller = Controller()
     form = CHOICES(request.POST)
     data = request.POST

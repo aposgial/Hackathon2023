@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from .controller import Controller
 from .exceptions import *
-from hackathon.mixins import ReversableList
 from .forms import CHOICES
 from django.utils import datastructures as ds
 
@@ -29,6 +28,7 @@ def view(request):
 
 
 def rotate(request):
+
     controller = Controller()
     form = CHOICES(request.POST)
     data = request.POST
